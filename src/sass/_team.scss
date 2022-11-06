@@ -28,6 +28,8 @@
 }
 
 .team-list {
+@include list;
+
   display: flex;
   column-gap: 22px;
 }
@@ -36,10 +38,6 @@
   width: calc((100% - 44px) / 3);
 }
 
-.team-list__item:hover .team-list__network-list {
-  opacity: 1;
-  cursor: pointer;
-}
 
 .team-list__box {
   margin-top: 13px;
@@ -65,17 +63,21 @@
 }
 
 .team-list__network-list {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+@include position_center;
 
   opacity: 0;
 
   transition: opacity 250ms linear;
+
+  .team-list__item:hover & {
+      opacity: 1;
+      cursor: pointer;
+    }
 }
 
 .network-list {
+  @include list;
+  
   display: flex;
   justify-content: center;
   column-gap: 25px;
@@ -90,8 +92,9 @@
 .network-list__icon {
   fill: var(--text-color-secondary);
   transition: fill 250ms ease-in-out;
+
+  .network-list__link:hover & {
+      fill: var(--color-brand);
+    }
 }
 
-.network-list__link:hover .network-list__icon {
-  fill: var(--color-brand);
-}
