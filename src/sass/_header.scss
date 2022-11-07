@@ -49,7 +49,7 @@
   line-height: 1.56;
   color: var(--text-color-secondary);
   
-  transition: color 250ms ease-in-out;
+  @include transition(color);
 
   &:hover, &:focus {
      color: var(--color-brand);
