@@ -12,6 +12,8 @@
     --color-text-other: #808080;
 }
 
+$timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
 body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
@@ -69,12 +71,38 @@ img {
 
 .wrapper {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-image: linear-gradient(
         0deg,
         var(--background-gradient-wrapper),
         var(--background-gradient-wrapper)
       ),
-      url('../images/background-wrapper.jpg');
+      url('../images/hero-overlay.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-  }
+    background-position: center;
+
+    @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) { 
+            background-image: linear-gradient(
+                0deg,
+                var(--background-gradient-wrapper),
+                var(--background-gradient-wrapper)
+              ),
+              url(../images/hero-overlay2x.jpg);
+    }
+
+    @media screen and (min-device-pixel-ratio: 3),
+    screen and (min-resolution: 288dpi),
+    screen and (min-resolution: 3dppx) {
+            background-image: linear-gradient(
+                0deg,
+                var(--background-gradient-wrapper),
+                var(--background-gradient-wrapper)
+              ),
+              url(../images/hero-overlay3x.jpg);
+    }
+}

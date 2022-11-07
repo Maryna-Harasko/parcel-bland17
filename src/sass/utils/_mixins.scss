@@ -10,3 +10,35 @@
   padding: 0;
   margin: 0;
 }
+
+@mixin centeredFlex ($justify-content: center){
+  display: flex;
+  justify-content: $justify-content;
+  align-items: center;
+}
+
+@mixin transition ($props...) {
+  transition-property: $props;
+  transition-duration: 250ms;
+  transition-timing-function: $timing-function;
+}
+
+@mixin buttonPrimary ($width, $padding-top, $padding-bottom, $color-border, $color-secondary, $bgc) {
+  width: $width;
+  padding: $padding-top $padding-bottom;
+  font-size: 18px;
+  line-height: 1.56;
+  cursor: pointer;
+  border: 1px solid $color-border;
+  border-radius: 5px;
+  color: $color-secondary;
+  background-color: $bgc;
+  @include transition(background-color, color, border-color);
+}
+
+@mixin pseudo ($width) {
+  content: '';
+  position: absolute;
+  display: block;
+  width: $width;
+}
