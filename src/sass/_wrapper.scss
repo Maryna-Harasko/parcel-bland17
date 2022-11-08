@@ -1,0 +1,5 @@
+.wrapper {
+    position: relative;
+    @include centeredFlex();
+    @include backgroundImageRetina($file: 'hero-overlay', $type: 'webp');
+}

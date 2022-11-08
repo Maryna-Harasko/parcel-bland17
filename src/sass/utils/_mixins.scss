@@ -42,3 +42,31 @@
   display: block;
   width: $width;
 }
+
+$imgdir: '../images/';
+@mixin backgroundImageRetina($gradient: linear-gradient(
+  0deg,
+  var(--background-gradient-wrapper),
+  var(--background-gradient-wrapper)
+), $file, $type, $bg-size: cover, $bg-position: center) {
+  background-image: $gradient, url(#{$imgdir}#{$file} + '.' + #{$type});
+  background-size: $bg-size;
+  background-position: $bg-position;
+  background-repeat: no-repeat;
+
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    & {
+      background-image: $gradient, url(#{$imgdir}#{$file} + '2x.' + #{$type});
+    }
+  }
+
+  @media (min-device-pixel-ratio: 3),
+  screen and (min-resolution: 288dpi),
+  screen and (min-resolution: 3dppx) {
+    & {
+      background-image: $gradient, url(#{$imgdir}#{$file} + '3x.' + #{$type});
+    }
+  }
+}
