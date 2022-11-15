@@ -1,5 +1,6 @@
 @import './common';
-@import "./utils/mixins";
+@import './utils/mixins';
+@import './base/helpers';
 @import './blog';
 @import './business-cases';
 @import './callback';
@@ -10,4 +11,3 @@
 @import './solutions';
 @import './team';
 @import './wrapper';
-

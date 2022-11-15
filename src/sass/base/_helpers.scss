@@ -1,0 +1,54 @@
+.container {
+    padding: 0 28px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include respondTo('prima') {
+        width: 320px;
+    }
+
+    @include respondTo('quinta') {
+        width: 768px;
+    }
+
+    @include respondTo('octava') {
+        width: 1360px;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+.link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
