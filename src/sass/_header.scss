@@ -20,7 +20,7 @@
   }
 
   @include respondTo('octava') {
-    @include centeredFlex($justify-content: space-between);
+    @include centeredFlex($justify-content: space-between, $align-items: flex-start);
   }
 }
   

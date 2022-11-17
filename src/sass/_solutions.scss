@@ -1,0 +1,40 @@
+.solutions__container {
+    display: flex;
+    padding: 0;
+}
+
+.solutions__box {
+    padding: 84px 44px 84px 30px;
+    background-color: var(--color-brand);
+    color: var(--text-color-secondary);
+}
+
+.solutions__subtitle {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
+
+.solutions__title {
+    font-weight: 300;
+    font-size: 38px;
+    line-height: 1.26;
+    margin-bottom: 26px;
+}
+
+.solutions__text {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 17px;
+}
+
+.solutions__link {
+    @include buttonPrimary ($width: 167px, $padding-top: 11px, $padding-bottom: 12px, $color-secondary: var(--text-color-secondary), $bgc: var(--color-brand));
+    border: 1px solid var(--background-color-primary);
+
+    &:hover, &:focus {
+        color: var(--color-brand);
+        background-color: var(--background-color-primary);
+        border-color: var(--color-brand);
+    }
+}
