@@ -45,14 +45,15 @@
   width: $width;
   padding: $padding-top $padding-bottom;
   font-size: 18px;
-  line-height: 1.56;
+  line-height: 1.564;
   text-transform: capitalize;
   cursor: pointer;
   border: none;
   border-radius: 5px;
   color: $color-secondary;
   background-color: $bgc;
-  @include transition(background-color, color);
+  text-align: center;
+  @include transition(background-color, color, border-color);
 }
 
 // Міксин псевдоелементів
