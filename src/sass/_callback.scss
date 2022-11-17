@@ -1,0 +1,74 @@
+.callback__container {
+    display: block;
+    padding: 0;
+
+    @include respondTo('quinta') {
+        display: flex;
+    } 
+}
+
+.callback__box {
+    padding: 26px 30px 30px;
+    background-color: var(--background-color-callback);
+
+    @include respondTo('octava') {
+        padding: 78px 30px 82px 30px;
+    }
+}
+
+.callback__title {
+    font-weight: 300;
+    font-size: 38px;
+    line-height: 1.263;
+    color: var(--text-color-primary);
+    text-transform: capitalize;
+    margin-bottom: 34px;
+}
+
+.callback__field {
+    @include list;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.callback__input {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.44;
+    @include inputText($padding-t: 9px, $padding-r: 5px, $padding-b: 7px, $padding-l: 5px, $color: var(--color-text-other));
+
+    @include respondTo('quinta') {
+        font-size: 18px;
+        line-height: 1.28;
+        @include inputText($padding-t: 8px, $padding-r: 5px, $padding-b: 8px, $padding-l: 5px, $color: var(--color-text-other));
+    }
+
+    @include respondTo('octava') {
+        @include inputText($padding-t: 6px, $padding-r: 5px, $padding-b: 5px, $padding-l: 5px, $color: var(--color-text-other));
+        line-height: 1.564;
+    }
+}
+
+.callback__button {
+    @include buttonPrimary ($width: 260px, $padding-top: 10px, $padding-bottom: 10px, $color-secondary: var(--text-color-secondary), $bgc: var(--color-brand));
+    margin-top: 53px;
+    border: none;
+    font-size: 16px;
+    line-height: 1.362;
+
+    &:hover, &:focus {
+        color: var(--color-brand);
+        background-color: var(--background-color-primary);
+        outline: 1px solid var(--color-brand);
+    }
+
+    @include respondTo('quinta') {
+        @include buttonPrimary ($width: 324px, $padding-top: 8px, $padding-bottom: 9px, $color-secondary: var(--text-color-secondary), $bgc: var(--color-brand));
+    }
+
+    @include respondTo('octava') {
+        @include buttonPrimary ($width: 620px, $padding-top: 7px, $padding-bottom: 10px, $color-secondary: var(--text-color-secondary), $bgc: var(--color-brand));
+        margin-top: 60px;
+    }
+}

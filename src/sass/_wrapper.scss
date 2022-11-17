@@ -1,5 +1,18 @@
 .wrapper {
     position: relative;
     @include centeredFlex();
-    @include backgroundImageRetina($file: 'hero-overlay', $type: 'webp');
+    @include backgroundImageRetina($file: 'hero-bg-mobile');
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 320px;
+
+    @include respondTo('quinta') {
+        max-width: 768px;
+        @include backgroundImageRetina($file: 'hero-bg-tablet');
+    }
+
+    @include respondTo('octava') {
+        max-width: 1360px;
+        @include backgroundImageRetina($file: 'hero-bg-desktop');
+    }
 }

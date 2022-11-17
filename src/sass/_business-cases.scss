@@ -1,38 +1,75 @@
 .business-cases {
     padding-top: 50px;
-    padding-bottom: 48px;
+    padding-bottom: 46px;
     text-align: center;
+
+    @include respondTo('quinta') {
+      padding-top: 48px;
+      padding-bottom: 48px;
+    }
+
+    @include respondTo('octava') {
+      padding-top: 50px;
+    }
   }
   
   .business-cases__tagline {
-    font-size: 20px;
-    line-height: 1.65;
+    font-size: 18px;
+    line-height: 1.664;
     margin-bottom: 15px;
+
+    @include respondTo('quinta') {
+      font-size: 20px;
+      line-height: 1.647;
+    }
   }
   
   .business-cases__title {
     font-weight: 300;
     font-size: 38px;
-    line-height: 1.26;
+    line-height: 1.263;
     text-transform: capitalize;
-    margin-bottom: 34px;
+    margin-bottom: 35px;
+
+    @include respondTo('octava') {
+      margin-bottom: 34px;
+    }
   }
   
   .business-cases__text {
-    font-size: 18px;
-    line-height: 1.56;
-    margin-bottom: 39px;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 37px;
+
+    @include respondTo('quinta') {
+      font-size: 18px;
+      line-height: 1.564;
+      margin-bottom: 38px;
+    }
+
+    @include respondTo('octava') {
+      margin-bottom: 38px;
+    }
   }
   
   .business-cases__list {
     @include list;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 7px 8px;
+
+    @include respondTo('quinta') {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 7px 8px;
+    }
+    
   }
   
   .business-cases__item {
-    width: 320px;
-    height: 214px;
+
+    @include respondTo('quarta extensum') {
+      & + & {
+        margin-top: 7px;
+      }
+    }
+
   }
