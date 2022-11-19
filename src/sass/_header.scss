@@ -4,69 +4,98 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-  }
-  
-  .active {
-    background-color: var(--background-color-header);
-  }
-  
-  /* Navigation general styles */
-  
-  .nav-pages {
+    z-index: 999;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+}
+  
+.active {
+  background-color: var(--background-color-header);
+}
+  
+.header__nav {
+
+  @include respondTo('quinta') {
+    @include centeredFlex($justify-content: space-around, $align-items: flex-start);
   }
+
+  @include respondTo('octava') {
+    @include centeredFlex($justify-content: space-between, $align-items: flex-start);
+  }
+}
   
-  /* Logo styles */
+/* Logo styles */
   
-  .logotype {
+.logo {
+  @include centeredFlex($align-items: flex-end);
+  font-size: 32px;
+  line-height: 1.32;
+  color: var(--text-color-secondary);
+  
+  @include respondTo('quinta') {
     font-size: 35px;
     line-height: 1.21;
-    color: var(--text-color-secondary);
   }
-  
-  .logo-piece {
+
+  &_brand {
     color: var(--color-brand);
+
+    @include respondTo('quinta') {
+      margin-right: 10px;
+    }
   }
-  
-  /* Navigation styles */
-  
-  .nav-pages-list {
-    display: flex;
-    column-gap: 37px;
+}
+
+.logo__icon {
+  fill: var(--color-brand);
+  margin-right: 6px;
+
+  @include respondTo('quinta') {
+    margin-right: 10px;
   }
+}
   
-  .nav-page-link {
-    position: relative;
-    padding: 21px 0;
+/* Navigation styles */
   
-    font-size: 18px;
-    line-height: 1.56;
-    color: var(--text-color-secondary);
-  
-    transition: color 250ms ease-in-out;
+.navigation-list {
+  @include list;
+  display: flex;
+  column-gap: 12px;
+
+  @include respondTo('octava') {
+    column-gap: 38px;
   }
+ }
   
-  .nav-page-link:hover,
-  .nav-page-link:focus {
-    color: var(--color-brand);
+.navigation-list__link {
+  position: relative;
+  padding: 10px 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-color-secondary); 
+  @include transition(color);
+
+  &:hover, &:focus {
+     color: var(--color-brand);
   }
-  
-  .nav-page-link::after {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 100%;
+
+  &::after {
+    @include pseudo(100%);
     height: 4px;
     border-radius: 2px;
     background-color: var(--color-brand);
   
     transform: scaleX(0);
-    transition: background-color 250ms ease-in-out, transform 250ms ease-in-out;
+    @include transition(background-color, transform);
   }
-  
-  .nav-page-link:hover::after,
-  .nav-page-link:focus::after {
+
+  &:hover::after,
+   &:focus::after {
     transform: scaleX(1);
   }
+  
+  @include respondTo('quinta') {
+    font-size: 18px;
+    line-height: 1.56;
+  }
+}

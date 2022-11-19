@@ -1,57 +1,62 @@
 .hero {
+  text-align: center;
+  padding-top: 144px;
+  padding-bottom: 95px;
+
+  @include respondTo('quinta') {
+    padding-top: 407px;
+    padding-bottom: 412px;
+  }
+
+  @include respondTo('octava') {
     padding-top: 279px;
     padding-bottom: 284px;
-  
-    text-align: center;
   }
+}
   
-  .hero-title {
-    margin-bottom: 25px;
-  
+  .hero__title {
     font-weight: 300;
-    font-size: 55px;
-    line-height: 1.2;
+    font-size: 52px;
+    line-height: 1.269;
+    margin-bottom: 16px;
     color: var(--color-text-hero);
     text-transform: capitalize;
+
+    @include respondTo('quinta') {
+      font-size: 55px;
+      line-height: 1.2;
+      margin-bottom: 25px;
+    }
   }
   
-  .hero-text {
-    margin-bottom: 29px;
+  .hero__tagline {
+    margin-bottom: 27px;
   
     font-size: 22px;
-    line-height: 1.68;
+    line-height: 1.672;
     color: var(--color-text-hero);
+
+    @include respondTo('octava') {
+      margin-bottom: 29px;
+    }
   }
   
-  .hero-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 165px;
+  .hero__button {
+    @include centeredFlex;
+    @include buttonPrimary(156px, 10px, 9px, var(--text-color-secondary), var(--color-brand));
     margin: 0 auto;
-    padding-top: 10px;
-    padding-bottom: 9px;
-  
-    font-size: 18px;
-    line-height: 1.56;
-    cursor: pointer;
-    border: 1px solid var(--color-brand);
-    border-radius: 5px;
-    color: var(--text-color-secondary);
-    background-color: var(--color-brand);
-  
-    transition: background-color 250ms ease-in-out, color 250ms ease-in-out,
-      border-color 250ms ease-in-out;
+
+    &:hover, &:focus {
+      background-color: var(--color-text-hero);
+      color: var(--color-brand);
+    }
+
+    @include respondTo('quinta') {
+      width: 165px;
+    }
   }
   
-  .hero-button:hover,
-  .hero-button:focus {
-    border-color: var(--background-color-primary);
-    background-color: var(--background-color-primary);
-    color: var(--color-brand);
-  }
-  
-  .hero-button-icon {
+  .button__icon {
     margin-right: 6px;
     fill: currentColor;
   }

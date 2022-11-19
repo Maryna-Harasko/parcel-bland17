@@ -1,3 +1,17 @@
+//Міксин, який виводить необхідну точку злому 
+@mixin respondTo($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+      @media #{inspect(map-get($breakpoints, $breakpoint))} {
+          @content;
+      }
+  }
+
+  @else {
+      @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. " + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+// Міксин центрування за позиціонуванням
 @mixin position_center {
   position: absolute;
   top: 50%;
@@ -5,8 +19,97 @@
   transform: translate(-50%, -50%);
 }
 
+// Міксин скидання стилей списків
 @mixin list {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+// Міксин центрування за флексом
+@mixin centeredFlex ($justify-content: center, $align-items: center){
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+// Міксин transition
+@mixin transition ($props...) {
+  transition-property: $props;
+  transition-duration: 250ms;
+  transition-timing-function: $timing-function;
+}
+
+//Міксин стилей головної кнопки
+@mixin buttonPrimary ($width, $padding-top, $padding-bottom, $color-secondary, $bgc) {
+  width: $width;
+  padding: $padding-top $padding-bottom;
+  font-size: 18px;
+  line-height: 1.564;
+  text-transform: capitalize;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  color: $color-secondary;
+  background-color: $bgc;
+  text-align: center;
+  @include transition(background-color, color, border-color);
+}
+
+// Міксин псевдоелементів
+@mixin pseudo ($width) {
+  content: '';
+  position: absolute;
+  display: block;
+  width: $width;
+}
+
+// Міксин фонового зображення
+$imgdir: '../images/hero-background/';
+  @mixin backgroundImageRetina($gradient: linear-gradient(var(--background-gradient-wrapper), var(--background-gradient-wrapper)), $file, $bg-size: cover, $bg-position: center) {
+    background-image: $gradient, url(#{$imgdir}#{$file} + '.' + jpg);
+    background-size: $bg-size;
+    background-position: $bg-position;
+    background-repeat: no-repeat;
+    @supports (background: url('../images/hero-background/hero-bg-tablet.webp')) {
+    background-image: $gradient, url(#{$imgdir}#{$file} + '.' + webp);
+    }
+  
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      & {
+        background-image: $gradient, url(#{$imgdir}#{$file} + '2x.' + jpg);
+        @supports (background: url('../images/hero-background/hero-bg-tablet2x.webp')) {
+          background-image: $gradient, url(#{$imgdir}#{$file} + '2x.' + webp);
+        }
+      }
+    }
+  
+    @media (min-device-pixel-ratio: 3),
+    screen and (min-resolution: 288dpi),
+    screen and (min-resolution: 3dppx) {
+      & {
+        background-image: $gradient, url(#{$imgdir}#{$file} + '3x.' + jpg);
+        @supports (background: url('../images/hero-background/hero-bg-tablet3x.webp')) {
+          background-image: $gradient, url(#{$imgdir}#{$file} + '3x.' + webp);
+        }
+      }
+    }
+  }
+
+  // Міксин стилей input
+@mixin inputText($padding-t, $padding-r, $padding-b, $padding-l, $bgc: var(--background-color-primary), $color: inherit) {
+  display: block;
+  width: 100%;
+  padding: $padding-t $padding-r $padding-b $padding-l;
+  font-family: inherit;
+  background-color: $bgc;
+  color: $color;
+  border: none;
+  @include transition(outline);
+
+  &:focus {
+    outline: 1px solid var(--border-form-color);
+  }
 }

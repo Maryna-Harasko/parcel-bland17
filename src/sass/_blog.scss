@@ -1,0 +1,46 @@
+
+.revers {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 0;
+}
+
+.blog {
+
+  &__desc {
+    background-color: var(--background-color-blog);
+    color: var(--text-color-secondary);
+    padding: 112px 44px 113px 30px;
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 5px;
+  }
+
+  &__title {
+    font-weight: 300;
+    font-size: 38px;
+    line-height: 1.26;
+    text-transform: capitalize;
+    margin-bottom: 26px;
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 17px;
+  }
+
+  &__button {
+    @include buttonPrimary ($width: 196px, $padding-top: 11px, $padding-bottom: 10px, $color-secondary: var(--text-color-secondary), $bgc: var(--background-color-blog));
+    border: 1px solid var(--background-color-primary);
+
+    &:hover, &:focus {
+      background-color: var(--background-color-primary);
+      color: var(--background-color-blog);
+      border-color: var(--background-color-blog);
+    }
+  }
+}
