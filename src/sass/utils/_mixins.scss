@@ -113,3 +113,9 @@ $imgdir: '../images/hero-background/';
     outline: 1px solid var(--border-form-color);
   }
 }
+
+  // Мыксин центрування марджинами
+@mixin marginCenter {
+  margin-left: auto;
+  margin-right: auto;
+}
