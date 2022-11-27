@@ -43,7 +43,7 @@
   
   .hero__button {
     @include centeredFlex;
-    @include buttonPrimary(156px, 10px, 9px, var(--text-color-secondary), var(--color-brand));
+    @include buttonPrimary($width: 156px, $padding-top: 10px, $padding-bottom: 9px, $f-sz: 16px, $lh: 1.6, $color-secondary: var(--text-color-secondary), $bgc: var(--color-brand));
     margin: 0 auto;
 
     &:hover, &:focus {
@@ -53,6 +53,8 @@
 
     @include respondTo('quinta') {
       width: 165px;
+      font-size: 18px;
+      line-height: 1.564;
     }
   }
   

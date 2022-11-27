@@ -1,6 +1,6 @@
 <section class="team" id="contact">
-  <div class="container">
-    <p class="team__subtitle">Who we are</p>
+  <div class="container team__container">
+    <p class="team__tagline">Who we are</p>
     <h2 class="team__title">Our professional team</h2>
     <p class="team__description">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto,
@@ -9,7 +9,64 @@
     <ul class="team-list one-time">
       <li class="team-list__item">
         <div class="team-list__thumb">
-          <img src="./images/johndoe.jpg" alt="John Doe" width="420" />
+          <picture>
+            <source
+              srcset="
+                ./images/team/desktop/john-doe-desk.webp    1x,
+                ./images/team/desktop/john-doe-desk@2x.webp 2x,
+                ./images/team/desktop/john-doe-desk@3x.webp 3x
+              "
+              type="image/webp"
+              media="(min-width: 1360px)"
+            />
+            <source
+              srcset="
+                ./images/team/mobile/john-doe-mob.webp    1x,
+                ./images/team/mobile/john-doe-mob@2x.webp 2x,
+                ./images/team/mobile/john-doe-mob@3x.webp 3x
+              "
+              type="image/webp"
+              media="(max-width: 767px)"
+            />
+            <source
+              srcset="
+                ./images/team/tablet/john-doe-tab.webp    1x,
+                ./images/team/tablet/john-doe-tab@2x.webp 2x,
+                ./images/team/tablet/john-doe-tab@3x.webp 3x
+              "
+              type="image/webp"
+              media="(max-width: 1359px)"
+            />
+            <source
+              srcset="
+                ./images/team/desktop/john-doe-desk.jpg    1x,
+                ./images/team/desktop/john-doe-desk@2x.jpg 2x,
+                ./images/team/desktop/john-doe-desk@3x.jpg 3x
+              "
+              media="(min-width: 1360px)"
+            />
+            <source
+              srcset="
+                ./images/team/mobile/john-doe-mob.jpg    1x,
+                ./images/team/mobile/john-doe-mob@2x.jpg 2x,
+                ./images/team/mobile/john-doe-mob@3x.jpg 3x
+              "
+              media="(max-width: 767px)"
+            />
+            <source
+              srcset="
+                ./images/team/tablet/john-doe-tab.jpg    1x,
+                ./images/team/tablet/john-doe-tab@2x.jpg 2x,
+                ./images/team/tablet/john-doe-tab@3x.jpg 3x
+              "
+              media="(max-width: 1359px)"
+            />
+            <img
+              loading="lazy"
+              src="./images/team/desktop/john-doe-desk.jpg"
+              alt="John Doe"
+            />
+          </picture>
           <div class="team-list__network-list">
             <ul class="network-list">
               <li class="network-list__item">
@@ -50,7 +107,64 @@
       </li>
       <li class="team-list__item">
         <div class="team-list__thumb">
-          <img src="./images/janedoe.jpg" alt="Jane Doe" width="420" />
+          <picture>
+            <source
+              media="(min-width: 1360px)"
+              srcset="
+                ./images/team/desktop/jane-doe-desk.webp    1x,
+                ./images/team/desktop/jane-doe-desk@2x.webp 2x,
+                ./images/team/desktop/jane-doe-desk@3x.webp 3x
+              "
+              type="image/webp"
+            />
+            <source
+              media="(max-width: 767px)"
+              srcset="
+                ./images/team/mobile/jane-doe-mob.webp    1x,
+                ./images/team/mobile/jane-doe-mob@2x.webp 2x,
+                ./images/team/mobile/jane-doe-mob@3x.webp 3x
+              "
+              type="image/webp"
+            />
+            <source
+              media="(max-width: 1359px)"
+              srcset="
+                ./images/team/tablet/jane-doe-tab.webp    1x,
+                ./images/team/tablet/jane-doe-tab@2x.webp 2x,
+                ./images/team/tablet/jane-doe-tab@3x.webp 3x
+              "
+              type="image/webp"
+            />
+            <source
+              media="(min-width: 1360px)"
+              srcset="
+                ./images/team/desktop/jane-doe-desk.jpg    1x,
+                ./images/team/desktop/jane-doe-desk@2x.jpg 2x,
+                ./images/team/desktop/jane-doe-desk@3x.jpg 3x
+              "
+            />
+            <source
+              media="(max-width: 767px)"
+              srcset="
+                ./images/team/mobile/jane-doe-mob.jpg    1x,
+                ./images/team/mobile/jane-doe-mob@2x.jpg 2x,
+                ./images/team/mobile/jane-doe-mob@3x.jpg 3x
+              "
+            />
+            <source
+              media="(max-width: 1359px)"
+              srcset="
+                ./images/team/tablet/jane-doe-tab.jpg    1x,
+                ./images/team/tablet/jane-doe-tab@2x.jpg 2x,
+                ./images/team/tablet/jane-doe-tab@3x.jpg 3x
+              "
+            />
+            <img
+              loading="lazy"
+              src="./images/team/desktop/jane-doe-desk.jpg"
+              alt="Jane Doe"
+            />
+          </picture>
           <div class="team-list__network-list">
             <ul class="network-list">
               <li class="network-list__item">
@@ -91,7 +205,64 @@
       </li>
       <li class="team-list__item">
         <div class="team-list__thumb">
-          <img src="./images/stevesmith.jpg" alt="Steve Smith" width="420" />
+          <picture>
+            <source
+              media="(min-width: 1360px)"
+              srcset="
+                ./images/team/desktop/steve-smith-desk.webp    1x,
+                ./images/team/desktop/steve-smith-desk@2x.webp 2x,
+                ./images/team/desktop/steve-smith-desk@3x.webp 3x
+              "
+              type="image/webp"
+            />
+            <source
+              media="(max-width: 767px)"
+              srcset="
+                ./images/team/mobile/steve-smith-mob.webp    1x,
+                ./images/team/mobile/steve-smith-mob@2x.webp 2x,
+                ./images/team/mobile/steve-smith-mob@3x.webp 3x
+              "
+              type="image/webp"
+            />
+            <source
+              media="(max-width: 1359px)"
+              srcset="
+                ./images/team/tablet/steve-smith-tab.webp    1x,
+                ./images/team/tablet/steve-smith-tab@2x.webp 2x,
+                ./images/team/tablet/steve-smith-tab@3x.webp 3x
+              "
+              type="image/webp"
+            />
+            <source
+              media="(min-width: 1360px)"
+              srcset="
+                ./images/team/desktop/steve-smith-desk.jpg    1x,
+                ./images/team/desktop/steve-smith-desk@2x.jpg 2x,
+                ./images/team/desktop/steve-smith-desk@3x.jpg 3x
+              "
+            />
+            <source
+              media="(max-width: 767px)"
+              srcset="
+                ./images/team/mobile/steve-smith-mob.jpg    1x,
+                ./images/team/mobile/steve-smith-mob@2x.jpg 2x,
+                ./images/team/mobile/steve-smith-mob@3x.jpg 3x
+              "
+            />
+            <source
+              media="(max-width: 1359px)"
+              srcset="
+                ./images/team/tablet/steve-smith-tab.jpg    1x,
+                ./images/team/tablet/steve-smith-tab@2x.jpg 2x,
+                ./images/team/tablet/steve-smith-tab@3x.jpg 3x
+              "
+            />
+            <img
+              loading="lazy"
+              src="./images/team/desktop/steve-smith-desk.jpg"
+              alt="Steve Smith"
+            />
+          </picture>
           <div class="team-list__network-list">
             <ul class="network-list">
               <li class="network-list__item">

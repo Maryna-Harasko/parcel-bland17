@@ -1,59 +1,123 @@
 .team {
-  padding-top: 49px;
-  padding-bottom: 59px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   text-align: center;
+
+  @include respondTo('quinta') {
+    padding-top: 48px;
+    padding-bottom: 59px;
+  }
+
+  @include respondTo('octava') {
+    padding-top: 49px;
+  }
 }
 
-.team__subtitle {
-  margin-bottom: 16px;
+.team__container {
+  @include respondTo('quarta extensum') {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 
-  font-size: 20px;
-  line-height: 1.65;
+.team__tagline {
+  font-size: 18px;
+  line-height: 1.664;
+  margin-bottom: 15px;
+
+  @include respondTo('quinta') {
+    font-size: 20px;
+    line-height: 1.647;
+    margin-bottom: 16px;
+  }
 }
 
 .team__title {
-  margin-bottom: 34px;
-
   font-weight: 300;
   font-size: 38px;
-  line-height: 1.26;
+  line-height: 1.263;
   text-transform: capitalize;
+  margin-bottom: 35px;
+
+  @include respondTo('octava') {
+    margin-bottom: 34px;
+  }
 }
 
 .team__description {
-  margin-bottom: 45px;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 37px;
 
-  font-size: 18px;
-  line-height: 1.56;
+  @include respondTo('quinta') {
+    font-size: 17px;
+    line-height: 1.656;
+    margin-bottom: 49px;
+  }
+
+  @include respondTo('octava') {
+    font-size: 18px;
+    line-height: 1.564;
+    margin-bottom: 45px;
+  }
 }
 
 .team-list {
-@include list;
+  @include list;
 
-  display: flex;
-  column-gap: 22px;
+  @include respondTo('quinta') {
+    display: flex;
+    column-gap: 22px;
+  }
 }
 
 .team-list__item {
-  width: calc((100% - 44px) / 3);
+
+  @include respondTo('quarta extensum') {
+    & + & {
+      margin-top: 10px;
+    }
+  }
+
+  @include respondTo('quinta') {
+    width: calc((100% - 39px) / 3);
+  }
+
+  @include respondTo('octava') {
+    width: calc((100% - 31px) / 3);
+  }
 }
 
-
 .team-list__box {
-  margin-top: 13px;
+  margin-top: 14px;
+
+  @include respondTo('quinta') {
+    margin-top: 13px;
+  }
 }
 
 .team-list__name {
-  margin-bottom: 12px;
-
-  font-size: 25px;
-  line-height: 1.28;
   font-weight: 400;
+  margin-bottom: 11px;
+  font-size: 23px;
+  line-height: 1.252;
+
+  @include respondTo('quinta') {
+    margin-bottom: 12px;
+
+    font-size: 25px;
+    line-height: 1.267;
+  }
 }
 
 .team-list__position {
-  font-size: 18px;
-  line-height: 1.56;
+  font-size: 16px;
+  line-height: 1.6;
+
+  @include respondTo('quinta') {
+    font-size: 18px;
+    line-height: 1.564;
+  }
 }
 
 /* Network styles */
@@ -66,8 +130,7 @@
 @include position_center;
 
   opacity: 0;
-
-  transition: opacity 250ms linear;
+  @include transition(opacity);
 
   .team-list__item:hover & {
       opacity: 1;
@@ -84,14 +147,14 @@
 }
 
 .network-list__link {
-  display: inline-block;
+  display: block;
   width: 100%;
   height: 100%;
 }
 
 .network-list__icon {
   fill: var(--text-color-secondary);
-  transition: fill 250ms ease-in-out;
+  @include transition(fill);
 
   .network-list__link:hover & {
       fill: var(--color-brand);
@@ -100,29 +163,35 @@
 
 .my-slick-prev,
 .my-slick-next {
-  position: absolute;
-  top: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  width: 50px;
-  height: 40px;
-  cursor: pointer;
-  font-family: inherit;
-  font-weight: 900;
-  font-size: 36px;
-  line-height: 1;
-  border: none;
-  color: green;
-  background-color: transparent;
+  @include respondTo('quinta') {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 50px;
+    height: 40px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 1;
+    border: none;
+    color: green;
+    background-color: transparent;
+  }
 }
 
 .my-slick-prev {
-  left: -100px;
+  @include respondTo('quinta') {
+    left: -100px;
+  }
 }
 
 .my-slick-next {
-  right: -100px;
+  @include respondTo('quinta') {
+    right: -100px;
+  }
 }
 

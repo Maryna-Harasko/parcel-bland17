@@ -1,13 +1,65 @@
 <section class="solutions">
   <div class="container solutions__container">
-    <img
-      class="solutions__images"
-      src="./images/rectangle.jpg"
-      alt="dream team"
-      width="680"
-    />
-    <div class="solutions__box">
-      <p class="solutions__subtitle">What you are looking for</p>
+    <picture>
+      <source
+        media="(min-width: 1360px)"
+        srcset="
+          ./images/solutions/desktop/solution-desk.webp    1x,
+          ./images/solutions/desktop/solution-desk@2x.webp 2x,
+          ./images/solutions/desktop/solution-desk@3x.webp 3x
+        "
+        type="image/webp"
+      />
+      <source
+        media="(max-width: 767px)"
+        srcset="
+          ./images/solutions/mobile/solution-mob.webp    1x,
+          ./images/solutions/mobile/solution-mob@2x.webp 2x,
+          ./images/solutions/mobile/solution-mob@3x.webp 3x
+        "
+        type="image/webp"
+      />
+      <source
+        media="(max-width: 1359px)"
+        srcset="
+          ./images/solutions/tablet/solution-tab.webp    1x,
+          ./images/solutions/tablet/solution-tab@2x.webp 2x,
+          ./images/solutions/tablet/solution-tab@3x.webp 3x
+        "
+        type="image/webp"
+      />
+      <source
+        media="(min-width: 1360px)"
+        srcset="
+          ./images/solutions/desktop/solution-desk.jpg    1x,
+          ./images/solutions/desktop/solution-desk@2x.jpg 2x,
+          ./images/solutions/desktop/solution-desk@3x.jpg 3x
+        "
+      />
+      <source
+        media="(max-width: 767px)"
+        srcset="
+          ./images/solutions/mobile/solution-mob.jpg    1x,
+          ./images/solutions/mobile/solution-mob@2x.jpg 2x,
+          ./images/solutions/mobile/solution-mob@3x.jpg 3x
+        "
+      />
+      <source
+        media="(max-width: 1359px)"
+        srcset="
+          ./images/solutions/tablet/solution-tab.jpg    1x,
+          ./images/solutions/tablet/solution-tab@2x.jpg 2x,
+          ./images/solutions/tablet/solution-tab@3x.jpg 3x
+        "
+      />
+      <img
+        loading="lazy"
+        src="./images/solutions/desktop/solution-desk.jpg"
+        alt="dream team"
+      />
+    </picture>
+    <aside class="solutions__box">
+      <p class="solutions__tagline">What you are looking for</p>
       <h2 class="solutions__title">We provide bespoke solutions</h2>
       <p class="solutions__text">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate,
@@ -16,6 +68,6 @@
         maiores deleniti?
       </p>
       <a class="solutions__link link" href="#" target="_blank">Read more</a>
-    </div>
+    </aside>
   </div>
 </section>

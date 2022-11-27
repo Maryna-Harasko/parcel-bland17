@@ -41,11 +41,11 @@
 }
 
 //Міксин стилей головної кнопки
-@mixin buttonPrimary ($width, $padding-top, $padding-bottom, $color-secondary, $bgc) {
+@mixin buttonPrimary ($width, $padding-top, $padding-bottom, $f-sz, $lh, $color-secondary, $bgc) {
   width: $width;
   padding: $padding-top $padding-bottom;
-  font-size: 18px;
-  line-height: 1.564;
+  font-size: $f-sz;
+  line-height: $lh;
   text-transform: capitalize;
   cursor: pointer;
   border: none;

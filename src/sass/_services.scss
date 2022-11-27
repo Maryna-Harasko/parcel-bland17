@@ -1,27 +1,62 @@
 .services {
-  padding-top: 40px;
-  padding-bottom: 19px;
+  padding-top: 30px;
+  padding-bottom: 31px;
+
+  @include respondTo('quinta') {
+    padding-top: 40px;
+    padding-bottom: 47px;
+  }
+
+  @include respondTo('octava') {
+    padding-bottom: 19px;
+  }
 
   &__list {
     @include list;
-    display: flex;
-    column-gap: 71px;
-    text-align: center;
+
+    @include respondTo('quinta') {
+      display: flex;
+      column-gap: 51px;
+      text-align: center;
+    }
+
+    @include respondTo('octava') {
+      column-gap: 71px;
+    }
   }
 
   &__item {
-    width: calc((100% - 142px) / 3);
+
+    @include respondTo('quarta extensum') {
+      & + & {
+        margin-top: 18px;
+      }
+    }
+  
+    @include respondTo('quinta') {
+      width: calc((100% - 102px) / 3);
+    }
+
+    @include respondTo('octava') {
+      width: calc((100% - 142px) / 3);
+    }
   }
 
   &__wrap {
     position: relative;
     @include marginCenter;
-    margin-bottom: 15px;
-    width: 67px;
-    height: 67px;
+    margin-bottom: 9px;
+    width: 64px;
+    height: 64px;
     fill: var(--background-color-primary);
     background-color: var(--color-brand);
     border-radius: 50%;
+
+    @include respondTo('quinta') {
+      margin-bottom: 15px;
+      width: 67px;
+      height: 67px;
+    }
   }
 
   &__icon {
@@ -29,18 +64,27 @@
   }
 
   &__title {
-    margin-bottom: 16px;
+    text-align: center;
+    margin-bottom: 15px;
     font-weight: 400;
+    font-size: 18px;
+    line-height: 1.664;
 
-    font-size: 20px;
-    line-height: 1.65;
+    @include respondTo('quinta') {
+      margin-bottom: 16px;
+      font-size: 20px;
+      line-height: 1.647;
+    } 
   }
 
   &__text {
-    width: 362px;
-    @include marginCenter;
-    font-size: 18px;
-    line-height: 1.56;
     text-align: center;
+    font-size: 16px;
+    line-height: 1.6;
+
+    @include respondTo('quinta') {
+      font-size: 18px;
+      line-height: 1.564;
+    }
   }
 }
