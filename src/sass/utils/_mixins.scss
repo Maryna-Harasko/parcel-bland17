@@ -19,13 +19,6 @@
   transform: translate(-50%, -50%);
 }
 
-// Міксин скидання стилей списків
-@mixin list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
 // Міксин центрування за флексом
 @mixin centeredFlex ($justify-content: center, $align-items: center){
   display: flex;
@@ -41,19 +34,19 @@
 }
 
 //Міксин стилей головної кнопки
-@mixin buttonPrimary ($width, $padding-top, $padding-bottom, $f-sz, $lh, $color-secondary, $bgc) {
+@mixin buttonPrimary ($width, $padding-top, $padding-bottom, $f-sz, $lh, $color-secondary, $bgc, $bgc-hoFus, $color-hoFus, $outline-hoFus) {
   width: $width;
   padding: $padding-top $padding-bottom;
   font-size: $f-sz;
   line-height: $lh;
-  text-transform: capitalize;
-  cursor: pointer;
-  border: none;
-  border-radius: 5px;
   color: $color-secondary;
   background-color: $bgc;
-  text-align: center;
-  @include transition(background-color, color, border-color);
+
+  &:hover, &:focus {
+    background-color: $bgc-hoFus;
+    color: $color-hoFus;
+    outline: $outline-hoFus;
+  }
 }
 
 // Міксин псевдоелементів
@@ -114,8 +107,21 @@ $imgdir: '../images/hero-background/';
   }
 }
 
-  // Мыксин центрування марджинами
-@mixin marginCenter {
-  margin-left: auto;
-  margin-right: auto;
+// Міксин списку у флексі
+@mixin flexList($column-gap) {
+  display: flex;
+  column-gap: $column-gap;
+}
+
+// Міксин стилей обгорток кольорових секцій
+@mixin styleColouredSection($padding-t, $padding-r, $padding-b, $padding-l, $bgc, $color: inherit) {
+  padding-top: $padding-t;
+  padding-right: $padding-r;
+  padding-bottom: $padding-b;
+  padding-left: $padding-l;
+  background-color: $bgc;
+  color: $color;
+  @include respondTo('quinta') {
+    width: 50%;
+  }
 }

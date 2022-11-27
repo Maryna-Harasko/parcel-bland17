@@ -7,17 +7,3 @@
         padding-bottom: 16px;
     }
 }
-
-.footer-text {
-    margin-top: 9px;
-    font-size: 16px;
-    line-height: 1.6;
-    text-align: center;
-    color: var(--text-color-secondary);
-
-    @include respondTo('quinta'){
-        margin-top: 10px;
-        font-size: 18px;
-        line-height: 1.56;
-    }
-}

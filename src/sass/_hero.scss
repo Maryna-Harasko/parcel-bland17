@@ -43,22 +43,12 @@
   
   .hero__button {
     @include centeredFlex;
-    @include buttonPrimary($width: 156px, $padding-top: 10px, $padding-bottom: 9px, $f-sz: 16px, $lh: 1.6, $color-secondary: var(--text-color-secondary), $bgc: var(--color-brand));
-    margin: 0 auto;
-
-    &:hover, &:focus {
-      background-color: var(--color-text-hero);
-      color: var(--color-brand);
-    }
+    @include buttonPrimary($width: 156px, $padding-top: 10px, $padding-bottom: 9px, $f-sz: 16px, $lh: 1.6, $color-secondary: var(--text-color-secondary), $bgc: var(--color-brand), $bgc-hoFus: var(--color-text-hero), $color-hoFus: var(--color-brand), $outline-hoFus: none);
+    @extend %marginCenter;
 
     @include respondTo('quinta') {
       width: 165px;
       font-size: 18px;
       line-height: 1.564;
     }
-  }
-  
-  .button__icon {
-    margin-right: 6px;
-    fill: currentColor;
   }

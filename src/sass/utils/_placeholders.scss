@@ -1,0 +1,19 @@
+// Стилі посилань
+%link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+// Центрування марджинами
+%marginCenter {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Скидання дефолтних стилей списків
+%list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

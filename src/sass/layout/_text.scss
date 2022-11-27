@@ -1,0 +1,39 @@
+.text {
+    font-size: 16px;
+    line-height: 1.6;
+
+    @include respondTo('quinta') {
+      font-size: 18px;
+      line-height: 1.564;
+    }
+
+    &--white-section {
+        margin-bottom: 37px;
+
+        @include respondTo('quinta') {
+            margin-bottom: 38px;
+        }
+    }
+
+    &--coloured {
+        margin-bottom: 14px;
+
+        @include respondTo('quinta') {
+            margin-bottom: 20px;
+        }
+
+        @include respondTo('octava') {
+            margin-bottom: 17px;
+        }
+    }
+
+    &--copy {
+        margin-top: 9px;
+        color: var(--text-color-secondary);
+        text-align: center;
+
+        @include respondTo('quinta'){
+            margin-top: 10px;
+        } 
+    }
+}

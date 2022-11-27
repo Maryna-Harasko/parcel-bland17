@@ -2,8 +2,7 @@
     position: relative;
     @include centeredFlex();
     @include backgroundImageRetina($file: 'hero-bg-mobile');
-    margin-left: auto;
-    margin-right: auto;
+    @extend %marginCenter;
     max-width: 320px;
 
     @include respondTo('quinta') {

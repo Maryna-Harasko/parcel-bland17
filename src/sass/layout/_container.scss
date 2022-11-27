@@ -1,0 +1,28 @@
+.container {
+  padding: 0 28px;
+  @extend %marginCenter;
+
+  @include respondTo('prima') {
+    width: 320px;
+  }
+
+  @include respondTo('quinta') {
+    width: 768px;
+  }
+
+  @include respondTo('octava') {
+    width: 1360px;
+  }
+
+  &--coloured {
+    padding: 0;
+
+    @include respondTo('quinta') {
+        display: flex;
+    }
+
+    &.reversed {
+        flex-direction: row-reverse;
+    }
+  }
+}

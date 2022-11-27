@@ -1,14 +1,5 @@
-.callback__container {
-    padding: 0;
-
-    @include respondTo('quinta') {
-        display: flex;
-    } 
-}
-
 .callback__box {
-    padding: 26px 30px 30px;
-    background-color: var(--background-color-callback);
+    @include styleColouredSection($padding-t: 26px, $padding-r: 30px, $padding-b: 30px, $padding-l: 30px, $bgc: var(--background-color-callback));
 
     @include respondTo('octava') {
         padding: 78px 30px 82px 30px;
@@ -16,16 +7,12 @@
 }
 
 .callback__title {
-    font-weight: 300;
-    font-size: 38px;
-    line-height: 1.263;
     color: var(--text-color-primary);
-    text-transform: capitalize;
     margin-bottom: 34px;
 }
 
 .callback__field {
-    @include list;
+    @extend %list;
     display: flex;
     flex-direction: column;
     gap: 36px;
@@ -40,25 +27,20 @@
     @include respondTo('quinta') {
         font-size: 18px;
         line-height: 1.28;
-        @include inputText($padding-t: 8px, $padding-r: 5px, $padding-b: 8px, $padding-l: 5px, $color: var(--color-text-other));
+        padding-top: 8px;
+        padding-bottom: 8px;
     }
 
     @include respondTo('octava') {
-        @include inputText($padding-t: 6px, $padding-r: 5px, $padding-b: 5px, $padding-l: 5px, $color: var(--color-text-other));
+        padding-top: 6px;
+        padding-bottom: 5px;
         line-height: 1.564;
     }
 }
 
 .callback__button {
-    @include buttonPrimary ($width: 260px, $padding-top: 10px, $padding-bottom: 10px, $f-sz: 16px, $lh: 1.362, $color-secondary: var(--text-color-secondary), $bgc: var(--color-brand));
+    @include buttonPrimary ($width: 260px, $padding-top: 10px, $padding-bottom: 10px, $f-sz: 16px, $lh: 1.362, $color-secondary: var(--text-color-secondary), $bgc: var(--color-brand), $bgc-hoFus: var(--background-color-primary), $color-hoFus: var(--color-brand), $outline-hoFus: 1px solid var(--color-brand));
     margin-top: 53px;
-    border: none;
-
-    &:hover, &:focus {
-        color: var(--color-brand);
-        background-color: var(--background-color-primary);
-        outline: 1px solid var(--color-brand);
-    }
 
     @include respondTo('quinta') {
         width: 324px;

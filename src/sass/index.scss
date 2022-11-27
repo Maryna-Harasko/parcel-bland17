@@ -2,6 +2,8 @@
 
 @import './base/main';
 
+@import './layout/main';
+
 @import 
 './blog',
 './business-cases',
@@ -9,7 +11,11 @@
 './footer',
 './header',
 './hero',
+'./logo',
+'./navigation-list',
+'./network-list',
 './services',
+'./slick',
 './solutions',
 './team',
 './wrapper';

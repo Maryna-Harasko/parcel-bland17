@@ -21,34 +21,14 @@
 }
 
 .team__tagline {
-  font-size: 18px;
-  line-height: 1.664;
   margin-bottom: 15px;
 
   @include respondTo('quinta') {
-    font-size: 20px;
-    line-height: 1.647;
     margin-bottom: 16px;
   }
 }
 
-.team__title {
-  font-weight: 300;
-  font-size: 38px;
-  line-height: 1.263;
-  text-transform: capitalize;
-  margin-bottom: 35px;
-
-  @include respondTo('octava') {
-    margin-bottom: 34px;
-  }
-}
-
-.team__description {
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 37px;
-
+.team__text {
   @include respondTo('quinta') {
     font-size: 17px;
     line-height: 1.656;
@@ -56,23 +36,19 @@
   }
 
   @include respondTo('octava') {
-    font-size: 18px;
-    line-height: 1.564;
     margin-bottom: 45px;
   }
 }
 
 .team-list {
-  @include list;
+  @extend %list;
 
   @include respondTo('quinta') {
-    display: flex;
-    column-gap: 22px;
+    @include flexList(22px);
   }
 }
 
 .team-list__item {
-
   @include respondTo('quarta extensum') {
     & + & {
       margin-top: 10px;
@@ -110,88 +86,25 @@
   }
 }
 
-.team-list__position {
-  font-size: 16px;
-  line-height: 1.6;
-
-  @include respondTo('quinta') {
-    font-size: 18px;
-    line-height: 1.564;
-  }
-}
-
-/* Network styles */
-
 .team-list__thumb {
   position: relative;
 }
 
+.team__img {
+
+  .team-list__item:hover & {
+    filter: blur(1px) grayscale(80%) brightness(90%);
+  }
+}
+
 .team-list__network-list {
-@include position_center;
+  @include position_center;
 
   opacity: 0;
   @include transition(opacity);
 
   .team-list__item:hover & {
-      opacity: 1;
-      cursor: pointer;
-    }
-}
-
-.network-list {
-  @include list;
-  
-  display: flex;
-  justify-content: center;
-  column-gap: 25px;
-}
-
-.network-list__link {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.network-list__icon {
-  fill: var(--text-color-secondary);
-  @include transition(fill);
-
-  .network-list__link:hover & {
-      fill: var(--color-brand);
-    }
-}
-
-.my-slick-prev,
-.my-slick-next {
-  @include respondTo('quinta') {
-    position: absolute;
-    top: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    width: 50px;
-    height: 40px;
+    opacity: 1;
     cursor: pointer;
-    font-family: inherit;
-    font-weight: 900;
-    font-size: 36px;
-    line-height: 1;
-    border: none;
-    color: green;
-    background-color: transparent;
   }
 }
-
-.my-slick-prev {
-  @include respondTo('quinta') {
-    left: -100px;
-  }
-}
-
-.my-slick-next {
-  @include respondTo('quinta') {
-    right: -100px;
-  }
-}
-

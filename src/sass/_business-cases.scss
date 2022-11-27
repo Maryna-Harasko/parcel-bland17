@@ -18,54 +18,18 @@
   }
   
   .business-cases__tagline {
-    font-size: 18px;
-    line-height: 1.664;
     margin-bottom: 15px;
-
-    @include respondTo('quinta') {
-      font-size: 20px;
-      line-height: 1.647;
-    }
-  }
-  
-  .business-cases__title {
-    font-weight: 300;
-    font-size: 38px;
-    line-height: 1.263;
-    text-transform: capitalize;
-    margin-bottom: 35px;
-
-    @include respondTo('octava') {
-      margin-bottom: 34px;
-    }
-  }
-  
-  .business-cases__text {
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 37px;
-
-    @include respondTo('quinta') {
-      font-size: 18px;
-      line-height: 1.564;
-      margin-bottom: 38px;
-    }
-
-    @include respondTo('octava') {
-      margin-bottom: 38px;
-    }
   }
   
   .business-cases__list {
-    @include list;
+    @extend %list;
 
     @include respondTo('quinta') {
-      display: flex;
+      @include flexList(8px);
       flex-wrap: wrap;
       justify-content: center;
-      gap: 7px 8px;
+      row-gap: 7px;
     }
-    
   }
   
   .business-cases__item {

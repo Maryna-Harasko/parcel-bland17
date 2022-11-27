@@ -12,11 +12,10 @@
   }
 
   &__list {
-    @include list;
+    @extend %list;
 
     @include respondTo('quinta') {
-      display: flex;
-      column-gap: 51px;
+      @include flexList(51px);
       text-align: center;
     }
 
@@ -44,7 +43,7 @@
 
   &__wrap {
     position: relative;
-    @include marginCenter;
+    @extend %marginCenter;
     margin-bottom: 9px;
     width: 64px;
     height: 64px;
@@ -63,28 +62,16 @@
     @include position_center;
   }
 
-  &__title {
+  &__subtitle {
     text-align: center;
     margin-bottom: 15px;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.664;
 
     @include respondTo('quinta') {
       margin-bottom: 16px;
-      font-size: 20px;
-      line-height: 1.647;
     } 
   }
 
   &__text {
     text-align: center;
-    font-size: 16px;
-    line-height: 1.6;
-
-    @include respondTo('quinta') {
-      font-size: 18px;
-      line-height: 1.564;
-    }
   }
 }

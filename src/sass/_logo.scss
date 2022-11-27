@@ -1,0 +1,29 @@
+.logo {
+    @include centeredFlex($align-items: flex-end);
+    @extend %link;
+    font-size: 32px;
+    line-height: 1.32;
+    color: var(--text-color-secondary);
+  
+    @include respondTo('quinta') {
+      font-size: 35px;
+      line-height: 1.21;
+    }
+  
+    &_brand {
+      color: var(--color-brand);
+  
+      @include respondTo('quinta') {
+        margin-right: 10px;
+      }
+    }
+  }
+  
+  .logo__icon {
+    fill: var(--color-brand);
+    margin-right: 6px;
+  
+    @include respondTo('quinta') {
+      margin-right: 10px;
+    }
+  }
