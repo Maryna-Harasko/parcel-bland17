@@ -1,14 +1,15 @@
-@import './common';
-@import './utils/mixins';
-@import './base/fonts';
-@import './base/helpers';
-@import './blog';
-@import './business-cases';
-@import './callback';
-@import './footer';
-@import './header';
-@import './hero';
-@import './services';
-@import './solutions';
-@import './team';
-@import './wrapper';
+@import './utils/main';
+
+@import './base/main';
+
+@import 
+'./blog',
+'./business-cases',
+'./callback',
+'./footer',
+'./header',
+'./hero',
+'./services',
+'./solutions',
+'./team',
+'./wrapper';

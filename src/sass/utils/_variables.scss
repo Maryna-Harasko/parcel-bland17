@@ -15,6 +15,7 @@
 }
 
 $timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+$text-font-stack: 'Open sans', sans-serif;
 
 $breakpoints: (
     'prima': (min-width: 320px),
@@ -23,10 +24,3 @@ $breakpoints: (
     'major septima': (max-width: 1359px),
     'octava': (min-width: 1360px),
 ) !default;
-
-body {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    color: var(--text-color-primary);
-    background-color: var(--background-color-primary);
-}
