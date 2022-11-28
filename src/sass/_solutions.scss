@@ -36,6 +36,9 @@
     width: 167px;
     font-size: 18px;
     line-height: 1.56;
+  }
+
+  @include respondTo('octava') {
     padding-top: 11px;
     padding-bottom: 12px;
   }
