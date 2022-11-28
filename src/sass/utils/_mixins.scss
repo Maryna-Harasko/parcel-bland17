@@ -184,8 +184,8 @@ $imgdir: '../images/hero-background/';
 }
 
 // Міксин калькуляції розміщення елементів в списку
-// Параметр {$numberOfElement} визначає необхідну кількість елементів в рядку, параметр {#margin-t} визначає значення відступу між елементами до max-width: 767px, параметр {#marginQuinta} визначає значення марджина між елементами при min-width: 768px, параметр {#marginOctava} визначає значення марджина між елементами при min-width: 768px
-@mixin listLayout($margin-t, $marginQuinta, $marginOctava, $numberOfElement) {
+// Параметр {$numberOfElement} визначає необхідну кількість елементів в рядку, параметр {#margin-t} визначає значення відступу між елементами до max-width: 767px, параметр {#marginQuinta} визначає значення марджина між елементами при min-width: 768px, параметри {#marginEdgeQuinta} та {#marginEdgeOctava} визначають значення марджинів до края контейнера, параметр {#marginOctava} визначає значення марджина між елементами при min-width: 1360px
+@mixin listLayout($margin-t, $marginQuinta, $marginEdgeQuinta, $marginOctava, $marginEdgeOctava, $numberOfElement) {
   @include respondTo('quarta extensum') {
     & + & {
       margin-top: $margin-t;
@@ -193,11 +193,11 @@ $imgdir: '../images/hero-background/';
   }
 
   @include respondTo('quinta') {
-    width: calc((100% - $marginQuinta) / $numberOfElement);
+    width: calc((100% - #{$marginQuinta} * (#{$numberOfElement} - 1) - #{$marginEdgeQuinta}) / #{$numberOfElement});
   }
 
-  @include respondTo('quinta') {
-    width: calc((100% - $marginOctava) / $numberOfElement);
+  @include respondTo('octava') {
+    width: calc((100% - #{$marginOctava} * (#{$numberOfElement} - 1) - #{$marginEdgeOctava}) / #{$numberOfElement});
   }
 }
 

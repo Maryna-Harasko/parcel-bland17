@@ -12,6 +12,7 @@
 
     @include respondTo('quinta') {
       @include flexList(51px);
+      justify-content: space-between;
     }
 
     @include respondTo('octava') {
@@ -22,8 +23,10 @@
   &__item {
     @include listLayout(
       $margin-t: 18px,
-      $marginQuinta: 102px,
-      $marginOctava: 142px,
+      $marginQuinta: 51px,
+      $marginEdgeQuinta: 54px,
+      $marginOctava: 71px,
+      $marginEdgeOctava: 76px,
       $numberOfElement: 3
     );
   }

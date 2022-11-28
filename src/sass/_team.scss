@@ -46,8 +46,10 @@
 .team-list__item {
   @include listLayout(
     $margin-t: 10px,
-    $marginQuinta: 39px,
-    $marginOctava: 31px,
+    $marginQuinta: 18px,
+    $marginEdgeQuinta: 4px, 
+    $marginOctava: 21px,
+    $marginEdgeOctava: 4px,
     $numberOfElement: 3
   );
 }
