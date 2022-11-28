@@ -3,7 +3,7 @@
     @extend %link;
     font-size: 32px;
     line-height: 1.32;
-    color: var(--text-color-secondary);
+    color: colors('secondary');
   
     @include respondTo('quinta') {
       font-size: 35px;
@@ -11,7 +11,7 @@
     }
   
     &_brand {
-      color: var(--color-brand);
+      color: colors('brand');
   
       @include respondTo('quinta') {
         margin-right: 10px;
@@ -20,7 +20,7 @@
   }
   
   .logo__icon {
-    fill: var(--color-brand);
+    fill: colors('brand');
     margin-right: 6px;
   
     @include respondTo('quinta') {

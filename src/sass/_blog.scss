@@ -5,8 +5,8 @@
       $padding-r: 30px,
       $padding-b: 30px,
       $padding-l: 30px,
-      $bgc: var(--background-color-blog),
-      $color: var(--text-color-secondary),
+      $bgc: colors('accent'),
+      $color: colors('secondary'),
       $padding-tQuinta: 29px,
       $padding-rQuinta: 39px,
       $padding-bQuinta: 30px,
@@ -25,13 +25,13 @@
       $padding-bottom: 10px,
       $f-sz: 16px,
       $lh: 1.6,
-      $color-secondary: var(--text-color-secondary),
-      $bgc: var(--background-color-blog),
-      $bgc-hoFus: var(--background-color-primary),
-      $color-hoFus: var(--background-color-blog),
-      $outline-hoFus: var(--background-color-blog)
+      $color-secondary: colors('secondary'),
+      $bgc: colors('accent'),
+      $bgc-hoFus: colors('background'),
+      $color-hoFus: colors('accent'),
+      $outline-hoFus: colors('accent')
     );
-    outline: 1px solid var(--background-color-primary);
+    outline: 1px solid colors('secondary');
 
     @include respondTo('quinta') {
       width: 196px;

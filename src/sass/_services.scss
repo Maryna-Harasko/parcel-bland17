@@ -1,5 +1,11 @@
 .services {
-  @include paddingSection($padding-t: 30px, $padding-b: 31px, $padding-tQuinta: 40px, $padding-bQuinta: 47px, $padding-bOctava: 19px);
+  @include paddingSection(
+    $padding-t: 30px,
+    $padding-b: 31px,
+    $padding-tQuinta: 40px,
+    $padding-bQuinta: 47px,
+    $padding-bOctava: 19px
+  );
 
   &__list {
     @extend %list;
@@ -14,7 +20,12 @@
   }
 
   &__item {
-    @include listLayout($margin-t: 18px, $marginQuinta: 102px, $marginOctava: 142px, $numberOfElement: 3);
+    @include listLayout(
+      $margin-t: 18px,
+      $marginQuinta: 102px,
+      $marginOctava: 142px,
+      $numberOfElement: 3
+    );
   }
 
   &__wrap {
@@ -23,8 +34,8 @@
     margin-bottom: 9px;
     width: 64px;
     height: 64px;
-    fill: var(--background-color-primary);
-    background-color: var(--color-brand);
+    fill: colors('secondary');
+    background-color: colors('brand');
     border-radius: 50%;
 
     @include respondTo('quinta') {
@@ -44,7 +55,7 @@
 
     @include respondTo('quinta') {
       margin-bottom: 16px;
-    } 
+    }
   }
 
   &__text {

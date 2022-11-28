@@ -4,8 +4,8 @@
     $padding-r: 30px,
     $padding-b: 30px,
     $padding-l: 30px,
-    $bgc: var(--color-brand),
-    $color: var(--text-color-secondary),
+    $bgc: colors('brand'),
+    $color: colors('secondary'),
     $padding-tQuinta: 30px, 
     $padding-rQuinta: 39px,
     $padding-bQuinta: 30px,
@@ -24,13 +24,13 @@
     $padding-bottom: 11px,
     $f-sz: 16px,
     $lh: 1.6,
-    $color-secondary: var(--text-color-secondary),
-    $bgc: var(--color-brand),
-    $bgc-hoFus: var(--background-color-primary),
-    $color-hoFus: var(--color-brand),
-    $outline-hoFus: var(--color-brand)
+    $color-secondary: colors('secondary'),
+    $bgc: colors('brand'),
+    $bgc-hoFus: colors('background'),
+    $color-hoFus: colors('brand'),
+    $outline-hoFus: colors('brand')
   );
-  outline: 1px solid var(--background-color-primary);
+  outline: 1px solid colors('secondary');
 
   @include respondTo('quinta') {
     width: 167px;

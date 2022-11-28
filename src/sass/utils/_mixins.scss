@@ -120,7 +120,7 @@ $imgdir: '../images/hero-background/';
   $padding-r,
   $padding-b,
   $padding-l,
-  $bgc: var(--background-color-primary),
+  $bgc: colors('background'),
   $color: inherit
 ) {
   display: block;
@@ -133,7 +133,7 @@ $imgdir: '../images/hero-background/';
   @include transition(outline);
 
   &:focus {
-    outline: 1px solid var(--border-form-color);
+    outline: 1px solid mix(black, colors('secondary'), 4%);
   }
 }
 

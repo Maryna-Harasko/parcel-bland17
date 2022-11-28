@@ -11,19 +11,19 @@
     @extend %link;
     position: relative;
     padding: 10px 0;
-    color: var(--text-color-secondary);
+    color: colors('secondary');
     @include transition(color);
   
     &:hover,
     &:focus {
-      color: var(--color-brand);
+      color: colors('brand');
     }
   
     &::after {
       @include pseudo(100%);
       height: 4px;
       border-radius: 2px;
-      background-color: var(--color-brand);
+      background-color: colors('brand');
   
       transform: scaleX(0);
       @include transition(background-color, transform);

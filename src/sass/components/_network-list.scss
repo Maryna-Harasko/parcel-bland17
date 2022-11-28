@@ -11,10 +11,10 @@
 }
 
 .network-list__icon {
-  fill: var(--text-color-secondary);
+  fill: colors('secondary');
   @include transition(fill);
 
   .network-list__link:hover & {
-    fill: var(--color-brand);
+    fill: colors('brand');
   }
 }

@@ -1,5 +1,11 @@
 .team {
-  @include paddingSection($padding-t: 50px, $padding-b: 50px, $padding-tQuinta: 48px, $padding-bQuinta: 59px, $padding-bOctava: 49px);
+  @include paddingSection(
+    $padding-t: 50px,
+    $padding-b: 50px,
+    $padding-tQuinta: 48px,
+    $padding-bQuinta: 59px,
+    $padding-bOctava: 49px
+  );
 }
 
 .team__container {
@@ -38,7 +44,12 @@
 }
 
 .team-list__item {
-  @include listLayout($margin-t: 10px, $marginQuinta: 39px, $marginOctava: 31px, $numberOfElement: 3);
+  @include listLayout(
+    $margin-t: 10px,
+    $marginQuinta: 39px,
+    $marginOctava: 31px,
+    $numberOfElement: 3
+  );
 }
 
 .team-list__box {
@@ -68,7 +79,6 @@
 }
 
 .team__img {
-
   .team-list__item:hover & {
     filter: blur(1px) grayscale(80%) brightness(90%);
   }
