@@ -3,7 +3,13 @@
 // }
 
 .business-cases {
-  @include paddingSection($padding-t: 50px, $padding-b: 46px, $padding-tQuinta: 48px, $padding-bQuinta: 48px, $padding-bOctava: 50px);
+  @include paddingSection(
+    $padding-t: 50px,
+    $padding-b: 46px,
+    $padding-tQuinta: 48px,
+    $padding-bQuinta: 48px,
+    $padding-bOctava: 50px
+  );
 }
 
 .business-cases__tagline {

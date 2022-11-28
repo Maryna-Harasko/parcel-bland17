@@ -19,15 +19,11 @@
 
 .header__nav {
   @include respondTo('quinta') {
-    @include centeredFlex(
-      $justify-content: space-around,
-      $align-items: flex-start
-    );
+      justify-content: space-around;
+      align-items: flex-start;
   }
 
   @include respondTo('octava') {
-    @include centeredFlex(
-      $justify-content: space-between,
-    );
+      justify-content: space-between;
   }
 }

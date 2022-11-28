@@ -1,13 +1,11 @@
-//Міксин, який виводить необхідну точку злому 
+//Міксин, який виводить необхідну точку злому
 @mixin respondTo($breakpoint) {
   @if map-has-key($breakpoints, $breakpoint) {
-      @media #{inspect(map-get($breakpoints, $breakpoint))} {
-          @content;
-      }
-  }
-
-  @else {
-      @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. " + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. " + "Available breakpoints are: #{map-keys($breakpoints)}.";
   }
 }
 
@@ -20,21 +18,32 @@
 }
 
 // Міксин центрування за флексом
-@mixin centeredFlex ($justify-content: center, $align-items: center){
+@mixin centeredFlex($justify-content: center, $align-items: center) {
   display: flex;
   justify-content: $justify-content;
   align-items: $align-items;
 }
 
 // Міксин transition
-@mixin transition ($props...) {
+@mixin transition($props...) {
   transition-property: $props;
   transition-duration: 250ms;
   transition-timing-function: $timing-function;
 }
 
 //Міксин стилей головної кнопки
-@mixin buttonPrimary ($width, $padding-top, $padding-bottom, $f-sz, $lh, $color-secondary, $bgc, $bgc-hoFus, $color-hoFus, $outline-hoFus) {
+@mixin buttonPrimary(
+  $width,
+  $padding-top,
+  $padding-bottom,
+  $f-sz,
+  $lh,
+  $color-secondary,
+  $bgc,
+  $bgc-hoFus,
+  $color-hoFus,
+  $outline-hoFus
+) {
   width: $width;
   padding: $padding-top $padding-bottom;
   font-size: $f-sz;
@@ -42,7 +51,8 @@
   color: $color-secondary;
   background-color: $bgc;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background-color: $bgc-hoFus;
     color: $color-hoFus;
     outline: $outline-hoFus;
@@ -50,7 +60,7 @@
 }
 
 // Міксин псевдоелементів
-@mixin pseudo ($width) {
+@mixin pseudo($width) {
   content: '';
   position: absolute;
   display: block;
@@ -59,40 +69,60 @@
 
 // Міксин фонового зображення
 $imgdir: '../images/hero-background/';
-  @mixin backgroundImageRetina($gradient: linear-gradient(var(--background-gradient-wrapper), var(--background-gradient-wrapper)), $file, $bg-size: cover, $bg-position: center) {
-    background-image: $gradient, url(#{$imgdir}#{$file} + '.' + jpg);
-    background-size: $bg-size;
-    background-position: $bg-position;
-    background-repeat: no-repeat;
-    @supports (background: url('../images/hero-background/hero-bg-tablet.webp')) {
+@mixin backgroundImageRetina(
+  $gradient:
+    linear-gradient(
+      var(--background-gradient-wrapper),
+      var(--background-gradient-wrapper)
+    ),
+  $file,
+  $bg-size: cover,
+  $bg-position: center
+) {
+  background-image: $gradient, url(#{$imgdir}#{$file} + '.' + jpg);
+  background-size: $bg-size;
+  background-position: $bg-position;
+  background-repeat: no-repeat;
+  @supports (background: url('../images/hero-background/hero-bg-tablet.webp')) {
     background-image: $gradient, url(#{$imgdir}#{$file} + '.' + webp);
-    }
-  
-    @media screen and (min-device-pixel-ratio: 2),
-      screen and (min-resolution: 192dpi),
-      screen and (min-resolution: 2dppx) {
-      & {
-        background-image: $gradient, url(#{$imgdir}#{$file} + '2x.' + jpg);
-        @supports (background: url('../images/hero-background/hero-bg-tablet2x.webp')) {
-          background-image: $gradient, url(#{$imgdir}#{$file} + '2x.' + webp);
-        }
-      }
-    }
-  
-    @media (min-device-pixel-ratio: 3),
-    screen and (min-resolution: 288dpi),
-    screen and (min-resolution: 3dppx) {
-      & {
-        background-image: $gradient, url(#{$imgdir}#{$file} + '3x.' + jpg);
-        @supports (background: url('../images/hero-background/hero-bg-tablet3x.webp')) {
-          background-image: $gradient, url(#{$imgdir}#{$file} + '3x.' + webp);
-        }
+  }
+
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    & {
+      background-image: $gradient, url(#{$imgdir}#{$file} + '2x.' + jpg);
+      @supports (
+        background: url('../images/hero-background/hero-bg-tablet2x.webp')
+      ) {
+        background-image: $gradient, url(#{$imgdir}#{$file} + '2x.' + webp);
       }
     }
   }
 
-  // Міксин стилей input
-@mixin inputText($padding-t, $padding-r, $padding-b, $padding-l, $bgc: var(--background-color-primary), $color: inherit) {
+  @media (min-device-pixel-ratio: 3),
+    screen and (min-resolution: 288dpi),
+    screen and (min-resolution: 3dppx) {
+    & {
+      background-image: $gradient, url(#{$imgdir}#{$file} + '3x.' + jpg);
+      @supports (
+        background: url('../images/hero-background/hero-bg-tablet3x.webp')
+      ) {
+        background-image: $gradient, url(#{$imgdir}#{$file} + '3x.' + webp);
+      }
+    }
+  }
+}
+
+// Міксин стилей input
+@mixin inputText(
+  $padding-t,
+  $padding-r,
+  $padding-b,
+  $padding-l,
+  $bgc: var(--background-color-primary),
+  $color: inherit
+) {
   display: block;
   width: 100%;
   padding: $padding-t $padding-r $padding-b $padding-l;
@@ -114,15 +144,42 @@ $imgdir: '../images/hero-background/';
 }
 
 // Міксин стилей обгорток кольорових секцій
-@mixin styleColouredSection($padding-t, $padding-r, $padding-b, $padding-l, $bgc, $color: inherit) {
+@mixin styleColouredSection(
+  $padding-t,
+  $padding-r,
+  $padding-b,
+  $padding-l,
+  $bgc,
+  $color: inherit,
+  $padding-tQuinta,
+  $padding-rQuinta,
+  $padding-bQuinta,
+  $padding-lQuinta,
+  $padding-tOctava,
+  $padding-rOctava,
+  $padding-bOctava,
+  $padding-lOctava
+) {
   padding-top: $padding-t;
   padding-right: $padding-r;
   padding-bottom: $padding-b;
   padding-left: $padding-l;
   background-color: $bgc;
   color: $color;
+
   @include respondTo('quinta') {
     width: 50%;
+    padding-top: $padding-tQuinta;
+    padding-right: $padding-rQuinta;
+    padding-bottom: $padding-bQuinta;
+    padding-left: $padding-lQuinta;
+  }
+
+  @include respondTo('octava') {
+    padding-top: $padding-tOctava;
+    padding-right: $padding-rOctava;
+    padding-bottom: $padding-bOctava;
+    padding-left: $padding-lOctava;
   }
 }
 
@@ -145,7 +202,13 @@ $imgdir: '../images/hero-background/';
 }
 
 // Міксин падінгів некольорових секцій
-@mixin paddingSection($padding-t, $padding-b, $padding-tQuinta, $padding-bQuinta, $padding-bOctava) {
+@mixin paddingSection(
+  $padding-t,
+  $padding-b,
+  $padding-tQuinta,
+  $padding-bQuinta,
+  $padding-bOctava
+) {
   text-align: center;
   padding-top: $padding-t;
   padding-bottom: $padding-b;

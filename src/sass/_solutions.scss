@@ -5,16 +5,16 @@
     $padding-b: 30px,
     $padding-l: 30px,
     $bgc: var(--color-brand),
-    $color: var(--text-color-secondary)
+    $color: var(--text-color-secondary),
+    $padding-tQuinta: 30px, 
+    $padding-rQuinta: 39px,
+    $padding-bQuinta: 30px,
+    $padding-lQuinta: 30px,
+    $padding-tOctava: 84px,
+    $padding-rOctava: 44px,
+    $padding-bOctava: 84px,
+    $padding-lOctava: 30px
   );
-
-  @include respondTo('quinta') {
-    padding: 30px 39px 30px 30px;
-  }
-
-  @include respondTo('octava') {
-    padding: 84px 44px 84px 30px;
-  }
 }
 
 .solutions__button {

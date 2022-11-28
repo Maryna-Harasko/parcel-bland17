@@ -1,59 +1,86 @@
 .callback__box {
-    @include styleColouredSection($padding-t: 26px, $padding-r: 30px, $padding-b: 30px, $padding-l: 30px, $bgc: var(--background-color-callback));
-
-    @include respondTo('octava') {
-        padding: 78px 30px 82px 30px;
-    }
+  @include styleColouredSection(
+    $padding-t: 26px,
+    $padding-r: 30px,
+    $padding-b: 30px,
+    $padding-l: 30px,
+    $bgc: var(--background-color-callback),
+    $padding-tQuinta: 26px, 
+    $padding-rQuinta: 30px,
+    $padding-bQuinta: 30px,
+    $padding-lQuinta: 30px,
+    $padding-tOctava: 78px,
+    $padding-rOctava: 30px,
+    $padding-bOctava: 82px,
+    $padding-lOctava: 30px
+  );
 }
 
 .callback__title {
-    color: var(--text-color-primary);
-    margin-bottom: 34px;
+  color: var(--text-color-primary);
+  margin-bottom: 34px;
 }
 
 .callback__field {
-    @extend %list;
-    display: flex;
-    flex-direction: column;
-    gap: 36px;
+  @extend %list;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
 }
 
 .callback__input {
-    margin: 0;
-    font-size: 16px;
-    line-height: 1.44;
-    @include inputText($padding-t: 9px, $padding-r: 5px, $padding-b: 7px, $padding-l: 5px, $color: var(--color-text-other));
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.44;
+  @include inputText(
+    $padding-t: 9px,
+    $padding-r: 5px,
+    $padding-b: 7px,
+    $padding-l: 5px,
+    $color: var(--color-text-other)
+  );
 
-    @include respondTo('quinta') {
-        font-size: 18px;
-        line-height: 1.28;
-        padding-top: 8px;
-        padding-bottom: 8px;
-    }
+  @include respondTo('quinta') {
+    font-size: 18px;
+    line-height: 1.28;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
 
-    @include respondTo('octava') {
-        padding-top: 6px;
-        padding-bottom: 5px;
-        line-height: 1.564;
-    }
+  @include respondTo('octava') {
+    padding-top: 6px;
+    padding-bottom: 5px;
+    line-height: 1.564;
+  }
 }
 
 .callback__button {
-    @include buttonPrimary ($width: 260px, $padding-top: 10px, $padding-bottom: 10px, $f-sz: 16px, $lh: 1.362, $color-secondary: var(--text-color-secondary), $bgc: var(--color-brand), $bgc-hoFus: var(--background-color-primary), $color-hoFus: var(--color-brand), $outline-hoFus: 1px solid var(--color-brand));
-    margin-top: 53px;
+  @include buttonPrimary(
+    $width: 260px,
+    $padding-top: 10px,
+    $padding-bottom: 10px,
+    $f-sz: 16px,
+    $lh: 1.362,
+    $color-secondary: var(--text-color-secondary),
+    $bgc: var(--color-brand),
+    $bgc-hoFus: var(--background-color-primary),
+    $color-hoFus: var(--color-brand),
+    $outline-hoFus: 1px solid var(--color-brand)
+  );
+  margin-top: 53px;
 
-    @include respondTo('quinta') {
-        width: 324px;
-        padding-top: 8px;
-        padding-bottom: 9px;
-        font-size: 18px;
-        line-height: 1.564;
-    }
+  @include respondTo('quinta') {
+    width: 324px;
+    padding-top: 8px;
+    padding-bottom: 9px;
+    font-size: 18px;
+    line-height: 1.564;
+  }
 
-    @include respondTo('octava') {
-        width: 620px;
-        padding-top: 7px;
-        padding-bottom: 10px;
-        margin-top: 60px;
-    }
+  @include respondTo('octava') {
+    width: 620px;
+    padding-top: 7px;
+    padding-bottom: 10px;
+    margin-top: 60px;
+  }
 }

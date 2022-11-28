@@ -1,14 +1,21 @@
 .blog {
   &__box {
-    @include styleColouredSection($padding-t: 30px, $padding-r: 30px, $padding-b: 30px, $padding-l: 30px, $bgc: var(--background-color-blog), $color: var(--text-color-secondary));
-
-    @include respondTo('quinta') {
-      padding: 29px 39px 30px 30px;
-    }
-
-    @include respondTo('octava') {
-      padding: 112px 44px 113px 30px;
-    }
+    @include styleColouredSection(
+      $padding-t: 30px,
+      $padding-r: 30px,
+      $padding-b: 30px,
+      $padding-l: 30px,
+      $bgc: var(--background-color-blog),
+      $color: var(--text-color-secondary),
+      $padding-tQuinta: 29px,
+      $padding-rQuinta: 39px,
+      $padding-bQuinta: 30px,
+      $padding-lQuinta: 30px,
+      $padding-tOctava: 112px,
+      $padding-rOctava: 44px,
+      $padding-bOctava: 113px,
+      $padding-lOctava: 30px
+    );
   }
 
   &__button {
