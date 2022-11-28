@@ -3,41 +3,28 @@
 // }
 
 .business-cases {
-    padding-top: 50px;
-    padding-bottom: 46px;
-    text-align: center;
+  @include paddingSection($padding-t: 50px, $padding-b: 46px, $padding-tQuinta: 48px, $padding-bQuinta: 48px, $padding-bOctava: 50px);
+}
 
-    @include respondTo('quinta') {
-      padding-top: 48px;
-      padding-bottom: 48px;
-    }
+.business-cases__tagline {
+  margin-bottom: 15px;
+}
 
-    @include respondTo('octava') {
-      padding-top: 50px;
-    }
+.business-cases__list {
+  @extend %list;
+
+  @include respondTo('quinta') {
+    @include flexList(8px);
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 7px;
   }
-  
-  .business-cases__tagline {
-    margin-bottom: 15px;
-  }
-  
-  .business-cases__list {
-    @extend %list;
+}
 
-    @include respondTo('quinta') {
-      @include flexList(8px);
-      flex-wrap: wrap;
-      justify-content: center;
-      row-gap: 7px;
+.business-cases__item {
+  @include respondTo('quarta extensum') {
+    & + & {
+      margin-top: 7px;
     }
   }
-  
-  .business-cases__item {
-
-    @include respondTo('quarta extensum') {
-      & + & {
-        margin-top: 7px;
-      }
-    }
-
-  }
+}

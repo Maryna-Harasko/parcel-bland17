@@ -125,3 +125,37 @@ $imgdir: '../images/hero-background/';
     width: 50%;
   }
 }
+
+// Міксин калькуляції розміщення елементів в списку
+// Параметр {$numberOfElement} визначає необхідну кількість елементів в рядку, параметр {#margin-t} визначає значення відступу між елементами до max-width: 767px, параметр {#marginQuinta} визначає значення марджина між елементами при min-width: 768px, параметр {#marginOctava} визначає значення марджина між елементами при min-width: 768px
+@mixin listLayout($margin-t, $marginQuinta, $marginOctava, $numberOfElement) {
+  @include respondTo('quarta extensum') {
+    & + & {
+      margin-top: $margin-t;
+    }
+  }
+
+  @include respondTo('quinta') {
+    width: calc((100% - $marginQuinta) / $numberOfElement);
+  }
+
+  @include respondTo('quinta') {
+    width: calc((100% - $marginOctava) / $numberOfElement);
+  }
+}
+
+// Міксин падінгів некольорових секцій
+@mixin paddingSection($padding-t, $padding-b, $padding-tQuinta, $padding-bQuinta, $padding-bOctava) {
+  text-align: center;
+  padding-top: $padding-t;
+  padding-bottom: $padding-b;
+
+  @include respondTo('quinta') {
+    padding-top: $padding-tQuinta;
+    padding-bottom: $padding-bQuinta;
+  }
+
+  @include respondTo('octava') {
+    padding-bottom: $padding-bOctava;
+  }
+}

@@ -1,22 +1,11 @@
 .services {
-  padding-top: 30px;
-  padding-bottom: 31px;
-
-  @include respondTo('quinta') {
-    padding-top: 40px;
-    padding-bottom: 47px;
-  }
-
-  @include respondTo('octava') {
-    padding-bottom: 19px;
-  }
+  @include paddingSection($padding-t: 30px, $padding-b: 31px, $padding-tQuinta: 40px, $padding-bQuinta: 47px, $padding-bOctava: 19px);
 
   &__list {
     @extend %list;
 
     @include respondTo('quinta') {
       @include flexList(51px);
-      text-align: center;
     }
 
     @include respondTo('octava') {
@@ -25,20 +14,7 @@
   }
 
   &__item {
-
-    @include respondTo('quarta extensum') {
-      & + & {
-        margin-top: 18px;
-      }
-    }
-  
-    @include respondTo('quinta') {
-      width: calc((100% - 102px) / 3);
-    }
-
-    @include respondTo('octava') {
-      width: calc((100% - 142px) / 3);
-    }
+    @include listLayout($margin-t: 18px, $marginQuinta: 102px, $marginOctava: 142px, $numberOfElement: 3);
   }
 
   &__wrap {
