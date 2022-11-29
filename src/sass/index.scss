@@ -1,13 +1,16 @@
-@import './common';
-@import './utils/mixins';
-@import './base/helpers';
-@import './blog';
-@import './business-cases';
-@import './callback';
-@import './footer';
-@import './header';
-@import './hero';
-@import './services';
-@import './solutions';
-@import './team';
-@import './wrapper';
+@import './utils/main';
+
+@import './base/main';
+
+@import './layout/main';
+
+@import './components/main';
+
+@import 
+'./blog',
+'./business-cases',
+'./callback',
+'./hero',
+'./services',
+'./solutions',
+'./team';

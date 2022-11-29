@@ -1,0 +1,14 @@
+.button {
+    @extend %link;
+    text-transform: capitalize;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    @include transition(background-color, color, outline);
+
+    &__icon {
+        margin-right: 6px;
+        fill: currentColor;
+    }
+}

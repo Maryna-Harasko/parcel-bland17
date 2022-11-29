@@ -1,46 +1,42 @@
-
-.revers {
-  display: flex;
-  flex-direction: row-reverse;
-  padding: 0;
-}
-
 .blog {
-
-  &__desc {
-    background-color: var(--background-color-blog);
-    color: var(--text-color-secondary);
-    padding: 112px 44px 113px 30px;
-  }
-
-  &__subtitle {
-    font-size: 20px;
-    line-height: 1.5;
-    margin-bottom: 5px;
-  }
-
-  &__title {
-    font-weight: 300;
-    font-size: 38px;
-    line-height: 1.26;
-    text-transform: capitalize;
-    margin-bottom: 26px;
-  }
-
-  &__text {
-    font-size: 18px;
-    line-height: 1.5;
-    margin-bottom: 17px;
+  &__box {
+    @include styleColouredSection(
+      $padding-t: 30px,
+      $padding-r: 30px,
+      $padding-b: 30px,
+      $padding-l: 30px,
+      $bgc: colors('accent'),
+      $color: colors('secondary'),
+      $padding-tQuinta: 29px,
+      $padding-rQuinta: 39px,
+      $padding-bQuinta: 30px,
+      $padding-lQuinta: 30px,
+      $padding-tOctava: 112px,
+      $padding-rOctava: 44px,
+      $padding-bOctava: 113px,
+      $padding-lOctava: 30px
+    );
   }
 
   &__button {
-    @include buttonPrimary ($width: 196px, $padding-top: 11px, $padding-bottom: 10px, $color-secondary: var(--text-color-secondary), $bgc: var(--background-color-blog));
-    border: 1px solid var(--background-color-primary);
+    @include buttonPrimary(
+      $width: 184px,
+      $padding-top: 11px,
+      $padding-bottom: 10px,
+      $f-sz: 16px,
+      $lh: 1.6,
+      $color-secondary: colors('secondary'),
+      $bgc: colors('accent'),
+      $bgc-hoFus: colors('background'),
+      $color-hoFus: colors('accent'),
+      $outline-hoFus: colors('accent')
+    );
+    outline: 1px solid colors('secondary');
 
-    &:hover, &:focus {
-      background-color: var(--background-color-primary);
-      color: var(--background-color-blog);
-      border-color: var(--background-color-blog);
+    @include respondTo('quinta') {
+      width: 196px;
+      font-size: 18px;
+      line-height: 1.564;
     }
   }
 }

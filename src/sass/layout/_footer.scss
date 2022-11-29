@@ -1,0 +1,9 @@
+.footer {
+    background-color: colors('primary');
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    @include respondTo('quinta') {
+        padding-bottom: 16px;
+    }
+}

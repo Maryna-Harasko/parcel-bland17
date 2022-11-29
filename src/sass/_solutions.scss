@@ -1,40 +1,45 @@
-.solutions__container {
-    display: flex;
-    padding: 0;
-}
-
 .solutions__box {
-    padding: 84px 44px 84px 30px;
-    background-color: var(--color-brand);
-    color: var(--text-color-secondary);
+  @include styleColouredSection(
+    $padding-t: 30px,
+    $padding-r: 30px,
+    $padding-b: 30px,
+    $padding-l: 30px,
+    $bgc: colors('brand'),
+    $color: colors('secondary'),
+    $padding-tQuinta: 30px, 
+    $padding-rQuinta: 39px,
+    $padding-bQuinta: 30px,
+    $padding-lQuinta: 30px,
+    $padding-tOctava: 84px,
+    $padding-rOctava: 44px,
+    $padding-bOctava: 84px,
+    $padding-lOctava: 30px
+  );
 }
 
-.solutions__subtitle {
-    font-size: 20px;
-    line-height: 1.5;
-    margin-bottom: 5px;
-}
+.solutions__button {
+  @include buttonPrimary(
+    $width: 158px,
+    $padding-top: 10px,
+    $padding-bottom: 11px,
+    $f-sz: 16px,
+    $lh: 1.6,
+    $color-secondary: colors('secondary'),
+    $bgc: colors('brand'),
+    $bgc-hoFus: colors('background'),
+    $color-hoFus: colors('brand'),
+    $outline-hoFus: colors('brand')
+  );
+  outline: 1px solid colors('secondary');
 
-.solutions__title {
-    font-weight: 300;
-    font-size: 38px;
-    line-height: 1.26;
-    margin-bottom: 26px;
-}
-
-.solutions__text {
+  @include respondTo('quinta') {
+    width: 167px;
     font-size: 18px;
-    line-height: 1.5;
-    margin-bottom: 17px;
-}
+    line-height: 1.56;
+  }
 
-.solutions__link {
-    @include buttonPrimary ($width: 167px, $padding-top: 11px, $padding-bottom: 12px, $color-secondary: var(--text-color-secondary), $bgc: var(--color-brand));
-    border: 1px solid var(--background-color-primary);
-
-    &:hover, &:focus {
-        color: var(--color-brand);
-        background-color: var(--background-color-primary);
-        border-color: var(--color-brand);
-    }
+  @include respondTo('octava') {
+    padding-top: 11px;
+    padding-bottom: 12px;
+  }
 }

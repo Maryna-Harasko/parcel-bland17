@@ -1,15 +1,73 @@
 <section class="blog" id="blog">
-  <div class="container revers">
-    <img class="blog__img" src="./images/workspace.jpg" alt="workspace" width="680" />
-    <div class="blog__desc">
-      <p class="blog__subtitle">April 16 2020</p>
-      <h2 class="blog__title">Blog post one</h2>
-      <p class="blog__text">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate, ipsum dignissimos
-        quae laudantium asperiores nam aliquid impedit harum illum dolore explicabo ab dolores
-        itaque rerum temporibus doloribus iste maiores deleniti?
+  <div class="container container--coloured reversed">
+    <picture>
+      <source
+        media="(min-width: 1360px)"
+        srcset="
+          ./images/blog/desktop/blog-desk.webp    1x,
+          ./images/blog/desktop/blog-desk@2x.webp 2x,
+          ./images/blog/desktop/blog-desk@3x.webp 3x
+        "
+        type="image/webp"
+      />
+      <source
+        media="(max-width: 767px)"
+        srcset="
+          ./images/blog/mobile/blog-mob.webp    1x,
+          ./images/blog/mobile/blog-mob@2x.webp 2x,
+          ./images/blog/mobile/blog-mob@3x.webp 3x
+        "
+        type="image/webp"
+      />
+      <source
+        media="(max-width: 1359px)"
+        srcset="
+          ./images/blog/tablet/blog-tab.webp    1x,
+          ./images/blog/tablet/blog-tab@2x.webp 2x,
+          ./images/blog/tablet/blog-tab@3x.webp 3x
+        "
+        type="image/webp"
+      />
+      <source
+        media="(min-width: 1360px)"
+        srcset="
+          ./images/blog/desktop/blog-desk.jpg    1x,
+          ./images/blog/desktop/blog-desk@2x.jpg 2x,
+          ./images/blog/desktop/blog-desk@3x.jpg 3x
+        "
+      />
+      <source
+        media="(max-width: 767px)"
+        srcset="
+          ./images/blog/mobile/blog-mob.jpg    1x,
+          ./images/blog/mobile/blog-mob@2x.jpg 2x,
+          ./images/blog/mobile/blog-mob@3x.jpg 3x
+        "
+      />
+      <source
+        media="(max-width: 1359px)"
+        srcset="
+          ./images/blog/tablet/blog-tab.jpg    1x,
+          ./images/blog/tablet/blog-tab@2x.jpg 2x,
+          ./images/blog/tablet/blog-tab@3x.jpg 3x
+        "
+      />
+      <img
+        loading="lazy"
+        src="./images/blog/desktop/blog-desk.jpg"
+        alt="workspace"
+      />
+    </picture>
+    <div class="blog__box">
+      <p class="tagline">April 16 2020</p>
+      <h2 class="title title-coloured">Blog post one</h2>
+      <p class="text text--coloured">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate,
+        ipsum dignissimos quae laudantium asperiores nam aliquid impedit harum
+        illum dolore explicabo ab dolores itaque rerum temporibus doloribus iste
+        maiores deleniti?
       </p>
-      <a class="blog__button link" href="" target="_blank">Read our blog</a>
+      <a class="button blog__button" href="" target="_blank">Read our blog</a>
     </div>
   </div>
 </section>

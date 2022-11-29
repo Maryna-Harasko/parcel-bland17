@@ -1,0 +1,38 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+:root {
+  --background-color-header: rgba(0, 0, 0, 0.8);
+  --background-gradient-wrapper: rgba(0, 0, 0, 0.4);
+}
+
+$colors: (
+    'primary': #333333,
+    'secondary': #ffffff,
+    'brand': #28a745,
+    'accent': #0284d0,
+    'background': #ffffff
+);
+
+@function colors($key: 'secondary') {
+    @return map-get($colors, $key);
+  }
+
+$timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+$text-font-stack: 'Open sans', sans-serif;
+
+$breakpoints: (
+  'prima': (
+    min-width: 320px,
+  ),
+  'quarta extensum': (
+    max-width: 767px,
+  ),
+  'quinta': (
+    min-width: 768px,
+  ),
+  'major septima': (
+    max-width: 1359px,
+  ),
+  'octava': (
+    min-width: 1360px,
+  ),
+) !default;

@@ -13,50 +13,53 @@
     padding-bottom: 284px;
   }
 }
-  
-  .hero__title {
-    font-weight: 300;
-    font-size: 52px;
-    line-height: 1.269;
-    margin-bottom: 16px;
-    color: var(--color-text-hero);
-    text-transform: capitalize;
 
-    @include respondTo('quinta') {
-      font-size: 55px;
-      line-height: 1.2;
-      margin-bottom: 25px;
-    }
-  }
-  
-  .hero__tagline {
-    margin-bottom: 27px;
-  
-    font-size: 22px;
-    line-height: 1.672;
-    color: var(--color-text-hero);
+.hero__title {
+  font-weight: 300;
+  font-size: 52px;
+  line-height: 1.269;
+  margin-bottom: 16px;
+  color: mix(black, colors('secondary'), 8.5%);
+  text-transform: capitalize;
 
-    @include respondTo('octava') {
-      margin-bottom: 29px;
-    }
+  @include respondTo('quinta') {
+    font-size: 55px;
+    line-height: 1.2;
+    margin-bottom: 25px;
   }
-  
-  .hero__button {
-    @include centeredFlex;
-    @include buttonPrimary(156px, 10px, 9px, var(--text-color-secondary), var(--color-brand));
-    margin: 0 auto;
+}
 
-    &:hover, &:focus {
-      background-color: var(--color-text-hero);
-      color: var(--color-brand);
-    }
+.hero__tagline {
+  margin-bottom: 27px;
 
-    @include respondTo('quinta') {
-      width: 165px;
-    }
+  font-size: 22px;
+  line-height: 1.672;
+  color: mix(black, colors('secondary'), 8.5%);
+
+  @include respondTo('octava') {
+    margin-bottom: 29px;
   }
-  
-  .button__icon {
-    margin-right: 6px;
-    fill: currentColor;
+}
+
+.hero__button {
+  @include centeredFlex;
+  @include buttonPrimary(
+    $width: 156px,
+    $padding-top: 10px,
+    $padding-bottom: 9px,
+    $f-sz: 16px,
+    $lh: 1.6,
+    $color-secondary: colors('secondary'),
+    $bgc: colors('brand'),
+    $bgc-hoFus: mix(black, colors('secondary'), 8.5%),
+    $color-hoFus: colors('brand'),
+    $outline-hoFus: none
+  );
+  @extend %marginCenter;
+
+  @include respondTo('quinta') {
+    width: 165px;
+    font-size: 18px;
+    line-height: 1.564;
   }
+}
